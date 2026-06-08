@@ -1,0 +1,41 @@
+<view class="page" style="position:relative;z-index:1">
+  <image class="page-bg" src="{{bgImage}}" mode="aspectFill" wx:if="{{bgImage}}"/>
+  <view class="hero">
+    <view class="hero-icon">📝</view>
+    <view class="hero-title">今天怎么样？</view>
+    <view class="hero-sub">告诉我你今天做了什么 · AI 推荐美食并治愈心情</view>
+  </view>
+
+  <view class="card">
+    <view class="form-group">
+      <view class="label">今天做了什么</view>
+      <textarea class="input area" placeholder="例如：睡到自然醒、看了两集电视剧、和朋友打游戏..." value="{{what}}" bindinput="onWhat"/>
+    </view>
+    <view class="form-group">
+      <view class="label">现在心情</view>
+      <view class="mood-row">
+        <view class="mood {{mood==='开心'?'on':''}}" bindtap="setMood" data-m="开心">😄 开心</view>
+        <view class="mood {{mood==='还行'?'on':''}}" bindtap="setMood" data-m="还行">😊 还行</view>
+        <view class="mood {{mood==='无聊'?'on':''}}" bindtap="setMood" data-m="无聊">😐 无聊</view>
+        <view class="mood {{mood==='Emo'?'on':''}}" bindtap="setMood" data-m="Emo">😢 Emo</view>
+      </view>
+    </view>
+    <view class="big-btn" bindtap="getAdvice" wx:if="{{!loading}}">✨ 提交 · AI 给你专属回复</view>
+    <view class="big-btn loading-btn" wx:if="{{loading}}"><text class="spin-drop">💧</text> 今天你喝水了吗？</view>
+  </view>
+
+  <view class="card" wx:if="{{result}}" style="border-color:#6366f1">
+    <view class="card-title">🤖 47的AI回复</view>
+    <view class="ai-result">{{result}}</view>
+  </view>
+
+  <view class="card" wx:if="{{history.length}}">
+    <view class="card-title">📋 最近记录 <text style="font-size:22rpx;color:#888;font-weight:400">· 点一下展开详情</text></view>
+    <view class="history-item" wx:for="{{history}}" wx:key="time" bindtap="showDetail" data-idx="{{index}}">
+      <view class="h-mood">{{item.mood}}</view>
+      <view class="h-what">{{item.what}}</view>
+      <view class="h-time">{{item.time}}</view>
+      <view class="h-arrow">›</view>
+    </view>
+  </view>
+</view>

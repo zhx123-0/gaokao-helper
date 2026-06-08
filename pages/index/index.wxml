@@ -1,0 +1,28 @@
+<view class="page" style="position:relative;z-index:1;background:transparent">
+  <image class="page-bg" src="{{bgImage}}" mode="aspectFill" wx:if="{{bgImage}}"/>
+  <view class="hero">
+    <view class="hero-bg"></view>
+    <image class="hero-avatar" src="/images/avatar.jpg" mode="aspectFill"/>
+    <view class="hero-greeting">Hi 47，假期开心！🎉</view>
+    <view class="count-sub">河北考生 · 物化地 · 出分日 6月25日</view>
+    <image class="kapian" src="/images/kapian.jpg" mode="widthFix"/>
+  </view>
+  <view class="grid-2">
+    <view class="entry-card purple" bindtap="goAI">
+      <view class="entry-icon">🤖</view>
+      <view class="entry-name">AI选专业</view>
+    </view>
+    <view class="entry-card blue" bindtap="goPlan">
+      <view class="entry-icon">📅</view>
+      <view class="entry-name">假期规划</view>
+    </view>
+    <view class="entry-card orange" bindtap="goTravel">
+      <view class="entry-icon">🗺️</view>
+      <view class="entry-name">毕业旅行</view>
+    </view>
+    <view class="entry-card green" bindtap="goScore">
+      <view class="entry-icon">📝</view>
+      <view class="entry-name">今日记录</view>
+    </view>
+  </view>
+</view>

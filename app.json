@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/score/score",
+    "pages/exam/exam",
+    "pages/plan/plan",
+    "pages/travel/travel",
+    "pages/ai/ai",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "47的高考助手",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#94a3b8",
+    "selectedColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "🏠 首页" },
+      { "pagePath": "pages/plan/plan", "text": "📅 计划" },
+      { "pagePath": "pages/travel/travel", "text": "🗺️ 旅游" },
+      { "pagePath": "pages/ai/ai", "text": "🤖 AI" },
+      { "pagePath": "pages/mine/mine", "text": "👤 我的" }
+    ]
+  }
+}

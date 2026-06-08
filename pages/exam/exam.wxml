@@ -1,0 +1,31 @@
+<view class="page" style="position:relative;z-index:1">
+  <image class="page-bg" src="{{bgImage}}" mode="aspectFill" wx:if="{{bgImage}}"/>
+  <view class="hero-bar">
+    <view class="hero-text">🤖 AI 智能选专业</view>
+    <view class="hero-desc">输入兴趣和分数 · AI 推荐最适合的专业和院校</view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">你的信息</view>
+    <input class="input" placeholder="兴趣爱好：喜欢电脑、玩游戏、拆东西..." placeholder-style="color:#666;font-size:26rpx" value="{{hobby}}" bindinput="onHobby"/>
+    <input class="input" placeholder="擅长科目：数学、物理、英语..." placeholder-style="color:#666;font-size:26rpx" value="{{subjects}}" bindinput="onSubjects"/>
+    <input class="input" type="number" placeholder="预估分数（可选）：580" placeholder-style="color:#666;font-size:26rpx" value="{{score}}" bindinput="onScore"/>
+    <view class="big-btn" bindtap="getAIAdvice" wx:if="{{!loading}}">✨ 立即智能推荐</view>
+    <view class="big-btn loading-btn" wx:if="{{loading}}"><text class="spin-drop">💧</text> 今天你喝水了吗？</view>
+  </view>
+
+  <view class="card" wx:if="{{result}}" style="border-color:#6366f1">
+    <view class="card-title">🤖 推荐结果</view>
+    <view class="ai-result">{{result}}</view>
+  </view>
+
+  <view class="card" wx:if="{{history.length}}">
+    <view class="card-title">📋 查询记录 <text style="font-size:22rpx;color:#888;font-weight:400">· 点击查看</text></view>
+    <view class="h-item" wx:for="{{history}}" wx:key="time" bindtap="showDetail" data-idx="{{index}}">
+      <view class="h-score">{{item.score}}分</view>
+      <view class="h-hobby">{{item.preview}}</view>
+      <view class="h-time">{{item.time}}</view>
+      <view class="h-arr">›</view>
+    </view>
+  </view>
+</view>

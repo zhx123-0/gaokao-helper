@@ -1,0 +1,35 @@
+<view class="page" style="position:relative;z-index:1">
+  <image class="page-bg" src="{{bgImage}}" mode="aspectFill" wx:if="{{bgImage}}"/>
+  <view class="hero">
+    <view class="hero-icon">🗺️</view>
+    <view class="hero-title">毕业旅行攻略</view>
+    <view class="hero-sub">河北出发 · 适合学生党的旅行路线</view>
+  </view>
+
+  <view class="filter-bar">
+    <view class="filter-tag {{filter==='all'?'active':''}}" bindtap="setFilter" data-f="all">全部</view>
+    <view class="filter-tag {{filter==='short'?'active':''}}" bindtap="setFilter" data-f="short">2-3天</view>
+    <view class="filter-tag {{filter==='mid'?'active':''}}" bindtap="setFilter" data-f="mid">4-5天</view>
+    <view class="filter-tag {{filter==='long'?'active':''}}" bindtap="setFilter" data-f="long">6-7天</view>
+  </view>
+
+  <view class="dest-card" wx:for="{{filteredDests}}" wx:key="name">
+    <view class="dest-img">{{item.emoji}}</view>
+    <view class="dest-info">
+      <view class="dest-name">{{item.name}}</view>
+      <view class="dest-tags">
+        <text class="tag">{{item.days}}</text>
+        <text class="tag price">{{item.budget}}</text>
+      </view>
+      <view class="dest-desc">{{item.desc}}</view>
+      <view class="dest-route">🗺️ {{item.route}}</view>
+      <view class="dest-tip">💡 {{item.tip}}</view>
+    </view>
+  </view>
+
+  <view class="tip-card">
+    <view class="tip-title">🎒 学生党出行 Tips</view>
+    <view class="tip-item" wx:for="{{tips}}" wx:key="*this">• {{item}}</view>
+  </view>
+
+</view>

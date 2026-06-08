@@ -1,0 +1,21 @@
+<view class="page" style="position:relative;z-index:1">
+  <image class="page-bg" src="{{bgImage}}" mode="aspectFill" wx:if="{{bgImage}}"/>
+  <view class="hero">
+    <image class="mine-avatar" src="/images/touxiang.jpg" mode="aspectFill"/>
+    <view class="name">@forty_sevennn</view>
+    <view class="tagline">2026届河北高考生 · 物化地</view>
+  </view>
+  <view class="card"><view class="card-title">📋 我的信息</view>
+    <view class="info-row"><text class="label">省份</text><text>河北</text></view>
+    <view class="info-row"><text class="label">选科</text><text>物理+化学+地理</text></view>
+    <view class="info-row"><text class="label">高考</text><text>2026年6月7-9日</text></view>
+    <view class="info-row"><text class="label">出分</text><text>预计6月25日</text></view>
+  </view>
+  <view class="card"><view class="card-title">ℹ️ 关于</view>
+    <view class="info-row">🤖 AI驱动：Coze大模型</view>
+    <view class="info-row">👨‍💻 开发者：zhxxxxxxxxxx</view>
+  </view>
+  <view class="card"><view class="card-title">💬 想对47说</view>
+    <view class="quote-v">高考只是人生的一个路口，不是终点。你努力的样子已经是最美的风景。47加油！记得多喝水💧</view>
+  </view>
+</view>
